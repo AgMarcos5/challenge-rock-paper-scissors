@@ -1,0 +1,41 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 3px solid $header-outline;
+    border-radius: 20px;
+    padding: 16px;
+    margin-top: 50px;
+
+    .title{
+        padding-left: 20px;
+        font-weight: 700;
+        font-size: 2.5em;
+        line-height: 0.8em;
+        display: grid;
+        align-items: center;
+    }
+
+    .score-container{    
+        width: 155px;
+        text-align: center;
+        background: white;
+        border-radius: 10px;
+        height: 116px;
+        display: grid;
+        align-content: center;
+
+        p{
+            color:$score-text;
+            font-size: 1.2em;
+            letter-spacing: 0.1em;
+            margin: 0;
+        }
+        .score{
+            color:$dark-text;color: #3b4363;
+            font-weight: 700;
+            font-size: 4em;
+        }
+    }
+}

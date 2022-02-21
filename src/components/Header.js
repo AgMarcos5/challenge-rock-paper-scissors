@@ -2,7 +2,7 @@ function Header ({score}) {
     return (
         <header>
             <div className="title">
-            Rock Paper Scissors
+            Rock<br/>Paper<br/>Scissors
             </div>
 
             <div className="score-container">
