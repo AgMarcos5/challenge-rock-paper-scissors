@@ -1,0 +1,17 @@
+.rules-button {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    letter-spacing: 0.2em;
+    border: 2px solid;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    font-weight: 100;
+
+    &:hover{
+        transform: translateY(5px);
+        background: rgba(0,0,0,.2);
+    }
+}

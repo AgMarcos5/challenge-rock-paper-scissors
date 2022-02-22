@@ -1,8 +1,8 @@
 function Rules () {
     return (
-        <div>
-            Rules
-        </div>
+        <>
+            <div className="rules-button">Rules</div>
+        </>
     )
 }
 

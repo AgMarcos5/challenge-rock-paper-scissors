@@ -1,0 +1,27 @@
+.play-container{
+    background-image: url("../images/bg-triangle.svg");
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center 70%;
+    position: relative;
+    width: 600px;
+    min-height: 457px;
+    margin: 0 auto;
+    padding-top: 40px;
+
+    .button{
+        display: inline-flex;
+
+        &.paper{
+            transform: translateX(-30px);
+        }
+        &.scissors{
+            transform: translateX(30px);
+        }
+        &.rock{
+            transform: translateY(20px);
+        }
+    }
+
+}
+
