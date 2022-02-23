@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import GameButton from "./GameButton";
 
 function Game ({userChoice, score, setScore}) {
 
@@ -41,12 +42,21 @@ function Game ({userChoice, score, setScore}) {
     }
 
     return (
-        <div>
-        You picked: {userChoice} <br/>
-        The house picked: {computerChoice} <br/>
-        Result: {result}
-
-        <Link to="/" onClick={() => setComputerChoice()}>Play again</Link>
+        <div className="game">
+            <div className="pick">
+                <h2>You picked</h2>
+                <GameButton name={userChoice}/>
+            </div>
+            <div className="result">
+                <h1>{result}</h1> <br/>
+                <div >
+                    <Link className="again" to="/" onClick={() => setComputerChoice()}>Play again</Link>
+                </div>
+            </div>
+            <div className="pick">
+                <h2>The house picked</h2>
+                <GameButton name={computerChoice}/>
+            </div>
         </div>
     )
 }

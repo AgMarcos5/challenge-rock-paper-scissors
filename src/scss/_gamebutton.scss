@@ -7,6 +7,9 @@
     align-content: center;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 0;
+    transition: 0.3s;
     &::after{
         content: "";
         background-color: #f0f0f0;
@@ -14,7 +17,7 @@
         height: 154px;
         border-radius: 50%;
         position: absolute;
-        
+        transition: 0.3s;
         box-shadow: inset 0px 8px 1px #b8bfcf;
     }
     img{
@@ -22,20 +25,33 @@
         z-index: 1;
         width: 70px;
     }
+    &:hover::after{
+        box-shadow: inset 0px 4px 1px #b8bfcf;
+    }
+
+}
+
+
+@mixin buttonShadow ($type) {
+    box-shadow: 0px 8px darken($type,10%);
+    &:hover{
+        box-shadow: 0px 4px darken($type,10%);
+        top: 10px;
+    }
 }
 
 .rock{
     background: $rock-gradient;
-    box-shadow: 0px 8px darken($rock,10%);
+    @include buttonShadow($rock);
 }
 
 .paper{
     background: $paper-gradient;
-    box-shadow: 0px 8px darken($paper,10%);
+    @include buttonShadow($paper);
 }
 
 
 .scissors{
     background: $scissors-gradient;
-    box-shadow: 0px 8px darken($scissors,10%);
+    @include buttonShadow($scissors);
 }

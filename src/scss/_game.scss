@@ -1,0 +1,50 @@
+.game{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    text-align: center;
+    height: 70%;
+    align-items: center;
+    
+    .pick{    
+        height: 100%;
+        display: grid;
+        align-content: space-evenly;
+    }
+
+    a{
+    cursor:default;
+    }
+
+   .button{
+    pointer-events:none;
+    transform: scale(1.5);
+   } 
+
+   h2{
+       font-weight: 600;
+        letter-spacing: 3px;
+   }
+
+   .again{
+       width: 220px;
+       height: 50px;
+       background-color: white;
+       border-radius: 7px; 
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       cursor: pointer;
+       transition: 0.5s;
+        color: $dark-text;
+        text-decoration: none;
+        letter-spacing: 2px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+       &:hover{
+            color: hsl(349, 71%, 52%);
+            transform: translateY(5px);
+       }
+   }
+
+}

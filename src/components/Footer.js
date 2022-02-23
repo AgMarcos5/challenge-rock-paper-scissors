@@ -1,8 +1,8 @@
 function Footer () {
     return (
-        <div>
+        <footer>
             Marcos Agüero
-        </div>
+        </footer>
     )
 }
 
