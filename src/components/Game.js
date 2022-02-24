@@ -9,6 +9,10 @@ function Game ({userChoice, score, setScore}) {
     const [result,setResult] = useState(null);
     const [counter, setCounter] = useState(3);
 
+
+    const [userWin, setUserWin] = useState(false);
+    const [computerWin, setComputerWin] = useState(false);
+
     useEffect(() => {
         counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
         if(counter === 0 && computerChoice){
@@ -24,6 +28,8 @@ function Game ({userChoice, score, setScore}) {
     let navigate = useNavigate();
 
     useEffect( () => {
+        setUserWin(false);
+        setComputerWin(false);
         if (!userChoice){
             return navigate("/");
         }
@@ -39,12 +45,14 @@ function Game ({userChoice, score, setScore}) {
             case 'paperrock':
                 setResult('YOU WIN');
                 setScore(score+1);
+                setUserWin(true);
                 break;
             case 'rockpaper':
             case 'scissorsrock':
             case 'paperscissors':
                 setResult('YOU LOOSE');
                 setScore(score-1);
+                setComputerWin(true);
                 break;
             default:
                 setResult('ITS A DRAW');
@@ -54,7 +62,7 @@ function Game ({userChoice, score, setScore}) {
 
     return (
         <div className="game">
-            <div className="pick">
+            <div className={"pick " + (userWin ? "win" : "")}>
                 <h2>You picked</h2>
                 <GameButton name={userChoice}/>
             </div>
@@ -70,7 +78,7 @@ function Game ({userChoice, score, setScore}) {
                         <Link className="again" to="/" onClick={() => setComputerChoice()}>Play again</Link>
                     </div>
                 </div>
-                <div className="pick house">
+                <div className={"pick house " + (computerWin ? "win" : "")}>
                     <h2>The house picked</h2>
                     <GameButton name={computerChoice}/>
                 </div>
