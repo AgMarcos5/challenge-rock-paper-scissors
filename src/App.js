@@ -12,14 +12,24 @@ function App() {
   const [userChoice, setUserChoice] = useState(null);
   const [score, setScore] = useState(0);
 
+  const [rulesActive, setRulesActive] = useState(false);
+
+  const toggleRules = () => {
+    setRulesActive(!rulesActive);
+  }
+
   return (
     <div className='container'>
       <Header score={score}/>
+
       <Routes>
         <Route path="/" element={<Play setUserChoice={setUserChoice}/>} />
         <Route path="/game" element={<Game userChoice={userChoice} score={score} setScore={setScore}/>} />
       </Routes>
-      <Rules/>
+
+      <div className="rules-button" onClick={toggleRules}>Rules</div>
+      <Rules rulesActive={rulesActive} toggleRules={toggleRules} />
+
       <Footer/>
     </div>
   );
