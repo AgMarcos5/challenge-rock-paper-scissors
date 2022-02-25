@@ -1,16 +1,31 @@
+
+   @mixin resize ($num) {
+        width: calc(#{$num}*#{$button-size});
+        height: calc(#{$num}*#{$button-size});
+        &::after{
+            width: calc(#{$num}*#{$button-white-size});
+            height: calc(#{$num}*#{$button-white-size});
+        }
+    }
+.countgrid{
+    grid-template-columns: 50% 50% !important;
+}
 .game{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    display: grid;
     text-align: center;
-    height: 70%;
+    grid-template-columns: 35% 1fr 35%;
+    grid-auto-rows: 50px;
+    grid-gap: 10px;
     align-items: center;
+    justify-items: center;
+    height: 70%;
+    align-content: center;
     
     .pick{    
         height: 100%;
         display: grid;
         align-content: space-evenly;
+        text-align: center;
     }
 
     a{
@@ -19,12 +34,14 @@
 
    .button{
     pointer-events:none;
-    transform: scale(1.5);
+    @include resize(1.5);
    } 
+
 
    h2{
        font-weight: 600;
         letter-spacing: 3px;
+        padding-bottom: 2em;    
    }
 
 
@@ -78,10 +95,10 @@
         transform: scale(0.1);
     }
     50%{
-        transform: scale(1.7);
+        transform: scale(1.3);
     }
     to{
-        transform: scale(1.5);
+        transform: scale(1);
     }
 }
 
@@ -110,3 +127,51 @@
         @include buttonShadowWin($scissors);
     }    
 } 
+
+
+@media(max-width: 869px){
+    .game { 
+        grid-template-columns: 1fr 1fr; 
+        align-content: space-evenly; 
+        .button {
+            @include resize(1);
+        }
+    }
+    .game div:nth-child(1) { order: 1; }
+    .game div:nth-child(2) { 
+        order: 3; 
+        grid-column: 1 / 3; 
+        margin-top: 50px;
+        h1 {
+            font-size: 3.5em;
+        }
+        .again {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    .game div:nth-child(3) { order: 2; }
+
+    .rules-button {
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 140px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:500px){
+    .game{
+        h2 {
+            font-size: 1em;
+        }
+        .button {
+            @include resize(0.8);
+            img{
+                width: 50px;
+            }
+        }
+    } 
+}

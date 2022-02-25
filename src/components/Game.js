@@ -50,7 +50,7 @@ function Game ({userChoice, score, setScore}) {
             case 'rockpaper':
             case 'scissorsrock':
             case 'paperscissors':
-                setResult('YOU LOOSE');
+                setResult('YOU LOSE');
                 setScore(score-1);
                 setComputerWin(true);
                 break;
@@ -61,7 +61,7 @@ function Game ({userChoice, score, setScore}) {
     }
 
     return (
-        <div className="game">
+        <div className={"game " + (counter === 0 ? "" : "countgrid")}>
             <div className={"pick " + (userWin ? "win" : "")}>
                 <h2>You picked</h2>
                 <GameButton name={userChoice}/>

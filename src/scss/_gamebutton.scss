@@ -1,6 +1,6 @@
 .button{
-    height: 195px;
-    width: 195px;
+    height: $button-size;
+    width: $button-size;
     margin: 10px;
     border-radius: 50%;
     display: flex;
@@ -13,8 +13,8 @@
     &::after{
         content: "";
         background-color: #f0f0f0;
-        width: 154px;
-        height: 154px;
+        width: $button-white-size;
+        height: $button-white-size;
         border-radius: 50%;
         position: absolute;
         transition: 0.3s;
