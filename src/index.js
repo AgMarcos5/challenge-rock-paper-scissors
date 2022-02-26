@@ -4,7 +4,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename='/challenge-rock-paper-scissors'>
     <App />
   </BrowserRouter>,
   document.getElementById('root')
