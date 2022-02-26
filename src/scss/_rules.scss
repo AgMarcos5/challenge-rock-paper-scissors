@@ -25,6 +25,7 @@
     background-color: rgba(0,0,0,.3);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
+    z-index: 2;
 }
 
 .rules{

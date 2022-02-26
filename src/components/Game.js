@@ -67,7 +67,7 @@ function Game ({userChoice, score, setScore}) {
                 <GameButton name={userChoice}/>
             </div>
             {counter>0 ? (
-                <div className="pick">
+                <div className="pick count">
                     <div className="house_counter">{counter}</div>
                 </div>
             ) : (
