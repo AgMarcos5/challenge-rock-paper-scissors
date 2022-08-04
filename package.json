@@ -1,6 +1,5 @@
 {
   "name": "challenge-rock-paper-scissors",
-  "homepage": "https://agmarcos5.github.io/challenge-rock-paper-scissors",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
